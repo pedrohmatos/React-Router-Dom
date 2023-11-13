@@ -9,7 +9,7 @@ usando npm:
 `npm install react-router-dom`  
 ou  
 `npm install react-router-dom@next`  
-@next para garantir que vocÊ está instalando a versão mais recente
+@next para garantir que você está instalando a versão mais recente
 
 ## Componentes do React Router Dom
 ### `<BrowserRouter>`
@@ -43,7 +43,7 @@ Esse hook é utilizado para obter a função de navegação que pode ser usada p
 Esse hook é essencial quando você está lidando com rotas dinâmicas, aquelas que incorporam parâmetros variáveis. Ao utilizá-lo, você obtém acesso fácil ao valor desses parâmetros por meio do objeto retornado pelo hook. Nesse objeto, as chaves são os nomes dados aos parâmetros na definição da rota, e os valores correspondentes são os dados passados na URL, disponíveis para serem acessados e utilizados dentro do seu componente. __Sim é possível tornar as rotas dinâmicas__.
 
 ## Rotas dinâmicas
-É possível criar uma rota, na qual um segmento da URL pode mudar com base em valores dinâmicos. Essa flexibilidade é possível ao adicionar parâmetros no `path` de uma rota. Eles são definidos na rota após uma segmento estático, separado por barra, usando dois pontos seguidos por um nome.  
+É possível criar uma rota, na qual um segmento da URL pode mudar com base em valores dinâmicos. Essa flexibilidade é possível ao adicionar parâmetros no `path` de uma rota. Eles são definidos na rota após um segmento estático, separado por barra, usando dois pontos seguidos por um nome.  
 Exemplo: `<Route path="/produto/:identificacao" element={<Produto />} />`
 
 Utilidade das rotas dinâmicas:
