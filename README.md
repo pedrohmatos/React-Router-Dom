@@ -1,5 +1,5 @@
 # Projeto para aprender React Router Dom
-    Para aprender a desenvolver "SPA" (Single Page Application), em português aplicações de página única, o projeto foi realizado com auxílio de video aulas para aprender a manusear uma biblioteca muito conhecida do React: o React Router Dom.
+Para aprender a desenvolver "SPA" (Single Page Application), em português aplicações de página única, o projeto foi realizado com auxílio de video aulas para aprender a manusear uma biblioteca muito conhecida do React: o React Router Dom.
 
 ## O que é roteamento
 Roteamento é a capacidade de mostrar diferentes páginas ao usuário, mas sem necessidade de recarregar a página. Isso significa que o usuário pode mover-se entre diferentes partes de um aplicativo clicando em um elemento ou inserindo uma URL.
