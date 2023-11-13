@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Projeto para aprender React Router Dom
+    Para aprender a desenvolver "SPA" (Single Page Application), em português aplicações de página única, o projeto foi realizado com auxílio de video aulas para aprender a manusear uma biblioteca muito conhecida do React: o React Router Dom.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## O que é roteamento
+Roteamento é a capacidade de mostrar diferentes páginas ao usuário, mas sem necessidade de recarregar a página. Isso significa que o usuário pode mover-se entre diferentes partes de um aplicativo clicando em um elemento ou inserindo uma URL.
 
-## Available Scripts
+## Instalação do React Router Dom
+usando npm:  
+`npm install react-router-dom`  
+ou  
+`npm install react-router-dom@next`  
+@next para garantir que vocÊ está instalando a versão mais recente
 
-In the project directory, you can run:
+## Componentes do React Router Dom
+### `<BrowserRouter>`
+Esse componente fornece a infraestrutura necessária para que a aplicação possa gerenciar a navegação do usuário.
 
-### `npm start`
+### `<Routes>`
+Esse componente é usado para definir as rotas em seu aplicativo. Ele atua como o recipiente para todas as rotas da sua aplicação.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `<Route>`
+Esse componente é usado para configurar uma rota específica dentro do componente `<Routes>`. Ele aceita propriedades como `path` para a URL correspondente e `element` para o componente, geralmente se trata de uma página, a ser renderizado quando a URL corresponder.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `<Link>`
+Esse componente é usado para criar links de navegação. Funciona como uma tag `<a href=""></a>` mas ele evita a recarga da página inteira, proporcionando uma experiência de navegação suave em aplicações React, usando a propriedade `to` para direcionar para URL que corresponderá a uma rota definida pelo `<Route>`. 
 
-### `npm test`
+### `<Outlet>`
+Esse componente é usado como saída, responsável por renderizar os componentes filhos de uma rota, ou seja é escrito em um componente que servirá como rota pai. __Sim é possível aninhar rotas__.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Rotas aninhadas
+O roteamento aninhado refere-se à prática de definir rotas dentro de outras rotas. É útil quando você precisa representar hierarquias de URLs em sua aplicação React. Isso é especialmente comum em aplicações que têm layouts complexos, com diferentes seções e páginas aninhadas dentro de outras. Usando `<Route> </Route>` como contêiner de outras `<Route>`.
 
-### `npm run build`
+## Hooks do React Router Dom
+Simplificam a obtenção e manipulação das informações da URL atual. Esses hooks facilitam o acesso a parâmetros de URL, informações de localização e navegação entre rotas de uma maneira mais direta e amigável.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `useLocation()`
+Esse hook fornece informações sobre a localização da URL atual. Isso pode ser útil para condicionalmente estilizar ou renderizar componentes com base nisso.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `useNavigate()`
+Esse hook é utilizado para obter a função de navegação que pode ser usada para navegar programaticamente, ou seja, mudar de rota em resposta a alguma lógica.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `useParams()`
+Esse hook é essencial quando você está lidando com rotas dinâmicas, aquelas que incorporam parâmetros variáveis. Ao utilizá-lo, você obtém acesso fácil ao valor desses parâmetros por meio do objeto retornado pelo hook. Nesse objeto, as chaves são os nomes dados aos parâmetros na definição da rota, e os valores correspondentes são os dados passados na URL, disponíveis para serem acessados e utilizados dentro do seu componente. __Sim é possível tornar as rotas dinâmicas__.
 
-### `npm run eject`
+## Rotas dinâmicas
+É possível criar uma rota, na qual um segmento da URL pode mudar com base em valores dinâmicos. Essa flexibilidade é possível ao adicionar parâmetros no `path` de uma rota. Eles são definidos na rota após uma segmento estático, separado por barra, usando dois pontos seguidos por um nome.  
+Exemplo: `<Route path="/produto/:identificacao" element={<Produto />} />`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Utilidade das rotas dinâmicas:
+* Permitem uma estrutura de aplicação mais flexível e adaptável. Você pode criar rotas que se ajustam dinamicamente a diferentes contextos, evitando a necessidade de criar rotas estáticas para cada possível cenário.
+* Facilitam o roteamento condicional com base em parâmetros da URL. Isso permite que seu aplicativo se comporte de maneira diferente com base nos valores fornecidos na URL, exemplo: uma aplicação de comércio em que através do id de um produto é verificado se ele está disponível ou não no estoque, senao um determinado botão de "adicionar ao carrinho" fica vermelho com uma mensagem indicando que o produto está esgotado.
+* Permite criar rotas exclusivas para diferentes tipos de usuários, como por exemplo clientes cadastrados, administradores, etc.
